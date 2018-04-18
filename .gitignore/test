@@ -18,8 +18,3 @@ split
 		return true;
 	}
 }
-
-isLoading
-{
-	return current.isLoading;
-}
