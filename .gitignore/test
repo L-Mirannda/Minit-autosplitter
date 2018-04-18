@@ -1,0 +1,17 @@
+state("Minit")
+{
+  int reset : "minit.exe", 0x161898, 0x0;
+}
+
+startup
+{
+  vars.reset=0;
+}
+split
+{
+  if(vars.reset + 1 == current.reset)
+        {
+          vars.reset = current.reset;
+          return true;
+        }
+}
