@@ -5,8 +5,17 @@ state("Minit")
 
 startup
 {
-  vars.reset=0;
+  vars.reset=4;
 }
+
+start
+{
+	if (current.reset == 10)
+	{
+		return true;
+	}
+}
+
 split
 {
   if(vars.reset + 1 == current.reset)
