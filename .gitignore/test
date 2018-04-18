@@ -3,14 +3,9 @@ state("minit")
 	int reset : "minit.exe", 0x161898, 0x0;
 }
 
-startup
-{
-	vars.reset=4;
-}
-
 start
 {
-	if (current.reset == 10)
+	if (current.reset == 5)
 	{
 		return true;
 	}
@@ -22,4 +17,9 @@ split
 	{
 		return true;
 	}
+}
+
+isLoading
+{
+	return current.isLoading;
 }
