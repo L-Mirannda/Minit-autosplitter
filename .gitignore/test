@@ -1,11 +1,11 @@
-state("Minit")
+state("minit")
 {
-  int reset : "minit.exe", 0x161898, 0x0;
+	int reset : "minit.exe", 0x161898, 0x0;
 }
 
 startup
 {
-  vars.reset=4;
+	vars.reset=4;
 }
 
 start
@@ -18,9 +18,8 @@ start
 
 split
 {
-  if(vars.reset + 1 == current.reset)
-        {
-          vars.reset = current.reset;
-          return true;
-        }
+	if (current.reset != old.reset)
+	{
+		return true;
+	}
 }
