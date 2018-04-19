@@ -1,6 +1,6 @@
 state("Iconoclasts") 
 {
-    bool     isPaused  : "Iconoclasts.exe", 0x966134, 0x4;
+    bool	isPaused  : "Iconoclasts.exe", 0x00966134, 0x4;
 }
 
 isLoading
