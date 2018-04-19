@@ -7,7 +7,7 @@ split
 {
 	if (current.reset != old.reset)
 	{
-		if(current.reset == 6)
+		if(current.reset == 10 || 12)
 			return false;
 		else
 			return true;
