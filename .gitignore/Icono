@@ -1,0 +1,9 @@
+state("Iconoclasts") 
+{
+    bool     ispaused  : "Iconoclasts.exe", 0x966134, 0x4;
+}
+
+isLoading
+{
+	return ispaused;
+}
