@@ -17,9 +17,6 @@ split
 {
 	if (current.reset != old.reset)
 	{
-		if(current.reset == 5 || current.reset == 7 || current.reset == 9)
-			return false;
-		else
-			return true;
+		return true;
 	}
 }
