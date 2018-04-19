@@ -6,6 +6,5 @@ state("Iconoclasts")
 
 isLoading
 {
-    if(isPaused)
-        return true;
+        return current.isPaused;
 }
