@@ -1,6 +1,9 @@
 state("minit")
 {
 	int reset : "minit.exe", 0x161898, 0x0;
+	int isPaused : "minit.exe", 0x40761C, 0x0, 0x10, 0x4, 0x55C, 0xCC;
+	int isDead : "minit.exe", 0x40761C, 0x0, 0x28, 0x1C, 0xCC;
+	int isItemload : "minit.exe", 0x40761C, 0x0, 0x0, 0x4, 0x4BC, 0xCC;
 }
 
 init
@@ -19,4 +22,10 @@ split
 	{
 		return true;
 	}
+}
+
+isLoading
+{
+	if (isPaused == 1 || isDead == 1 || isItemload == 1)
+		return true;
 }
