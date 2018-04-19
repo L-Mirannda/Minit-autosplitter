@@ -3,18 +3,13 @@ state("minit")
 	int reset : "minit.exe", 0x161898, 0x0;
 }
 
-start
-{
-	if (current.reset == 5)
-	{
-		return true;
-	}
-}
-
 split
 {
 	if (current.reset != old.reset)
 	{
-		return true;
+		if(current.reset == 6)
+			return false;
+		else
+			return true;
 	}
 }
