@@ -6,16 +6,6 @@ state("minit")
 	int isItemload : "minit.exe", 0x40761C, 0x0, 0x0, 0x4, 0x4BC, 0xCC;
 }
 
-init
-{
-    Action resetVars = () =>
-    {
-        vars.reset = 4;
-    };
-    vars.resetVars = resetVars;
-    vars.resetVars();
-}
-
 split
 {
 	if (current.reset != old.reset)
@@ -26,6 +16,6 @@ split
 
 isLoading
 {
-	if (isPaused == 1 || isDead == 1 || isItemload == 1)
+	if (current.isPaused == 1 || current.isDead == 1 || current.isItemload == 1)
 		return true;
 }
