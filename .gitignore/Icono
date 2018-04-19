@@ -1,9 +1,9 @@
 state("Iconoclasts") 
 {
-    bool	isPaused  : "Iconoclasts.exe", 0x00966134, 0x4;
+    int isPaused  : "Iconoclasts.exe", 0x00966134, 0x4;
 }
 
 isLoading
 {
-	return current.isPaused;
+	return current.isPaused = 1;
 }
