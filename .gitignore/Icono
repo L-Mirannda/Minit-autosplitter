@@ -12,5 +12,5 @@ isLoading
 
 gameTime
 {
-    return TimeSpan.FromMilliseconds(time);
+    return TimeSpan.FromMilliseconds(current.time);
 }
