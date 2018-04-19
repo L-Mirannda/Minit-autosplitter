@@ -1,16 +1,11 @@
 state("Iconoclasts") 
 {
     bool isPaused  : "Iconoclasts.exe", 0x00966134, 0x4;
-    int time : "Iconoclasts.exe", 0x07D2D4,0x31C;
     
 }
 
 isLoading
 {
-    return true;
-}
-
-gameTime
-{
-    return TimeSpan.FromMilliseconds(current.time);
+    if(isPaused)
+        return true;
 }
